@@ -7,6 +7,7 @@ package fundamentos;
  * - Conflitos de Nomes: Entendi que o import resolve ambiguidades, permitindo
  * que o Java saiba exatamente qual biblioteca usar (ex: java.util.Date).
  */
+import javax.swing.*;
 import java.util.Date;
 
 public class Import {
@@ -17,7 +18,8 @@ public class Import {
 
         Date d = new Date();
         System.out.println(d);
-
+        JOptionPane botao = new JOptionPane();
+        JOptionPane.showMessageDialog(botao, "Olá");
 
     }
 }
