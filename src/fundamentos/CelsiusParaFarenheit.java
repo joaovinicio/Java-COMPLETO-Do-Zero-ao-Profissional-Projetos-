@@ -13,7 +13,7 @@ public class CelsiusParaFarenheit {
 
         double ajuste = 32;
         double fator = 9.0 / 5.0;
-        double temperaturaCelsius = 42;
+        double temperaturaCelsius = 43;
 
         double temperatura = (temperaturaCelsius * fator) + ajuste;
         System.out.printf("A temperatura de Celsius para Farenheit é : %.2f %s ",temperatura , "ºF");
