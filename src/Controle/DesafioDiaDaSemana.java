@@ -1,4 +1,9 @@
 package Controle;
+/*
+* // Tratamento de caracteres especiais para evitar erros de entrada do usuário
+} else if ("Terça".equalsIgnoreCase(dia) || "terca".equalsIgnoreCase(dia)) {
+    System.out.println(3);
+}*/
 
 import java.util.Scanner;
 
@@ -14,7 +19,8 @@ public class DesafioDiaDaSemana {
             System.out.println(1);
         } else if ("Segunda".equalsIgnoreCase(dia)) {
             System.out.println(2);
-        } else if ("Terça".equalsIgnoreCase(dia)) {
+        } else if ("Terça".equalsIgnoreCase(dia)
+        || "terca".equalsIgnoreCase(dia)) {
             System.out.println(3);
         } else if ("Quarta".equalsIgnoreCase(dia)) {
             System.out.println(4);
@@ -22,7 +28,8 @@ public class DesafioDiaDaSemana {
             System.out.println(5);
         } else if ("Sexta".equalsIgnoreCase(dia)) {
             System.out.println(6);
-        } else if ("Sabádo".equalsIgnoreCase(dia)) {
+        } else if ("Sabádo".equalsIgnoreCase(dia)
+        || "sabado".equalsIgnoreCase(dia)) {
             System.out.println(7);
         }
         leitura.close();
