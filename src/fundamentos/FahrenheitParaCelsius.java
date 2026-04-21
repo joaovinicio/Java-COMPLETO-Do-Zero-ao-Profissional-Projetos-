@@ -14,12 +14,12 @@ package fundamentos;
 public class FahrenheitParaCelsius {
     public static void main(String[] args) {
 
-        double fator = 5.0 / 9.0;
-        double TemperaturaFahrenheit = 86;
-        double ajuste = 32;
+        final double AJUSTE = 32;
+        final double FORMULA = 5.0/ 9.0;
+        double fahrenheit = 86;
 
-        double temperatura = (TemperaturaFahrenheit - ajuste) * fator;
-        System.out.printf("A temperatura em Celius é : %.2f %s ",temperatura,"ºC");
+        double resultado = (fahrenheit - AJUSTE) * FORMULA;
+        System.out.printf("Resultado = %.2f ",resultado);
 
     }
 }
