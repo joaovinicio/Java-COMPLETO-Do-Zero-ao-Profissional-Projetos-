@@ -1,51 +1,54 @@
 package fundamentos;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 /**
  * MÓDULO: Fundamentos do Java
- * DESAFIO DE CONVERSÃO (Resolvido):
- * 1. Entrada de Dados: Uso do Scanner para capturar múltiplas entradas de texto.
- * 2. Normalização de Dados: Uso do .replace() para garantir que entradas com vírgula sejam aceitas.
- * 3. Conversão de Tipos (Parsing): Transformação de Strings em Double através da classe Wrapper.
- * 4. Localização: Configuração do Locale.US, embora o parse manual exija tratamento de String adicional.
+ * DESAFIO DE CONVERSÃO (Resolvido com robustez):
+ * 1. Entrada de Dados: Captura de múltiplas entradas de texto com Scanner.
+ * 2. Higienização de Dados (Sanitization): Uso de .replace() encadeado para remover
+ * pontos de milhar e converter vírgulas em pontos decimais, evitando NumberFormatException.
+ * 3. Conversão de Tipos (Parsing): Transformação de Strings higienizadas em tipos numéricos (Double).
  */
 public class DesafioConversao {
     public static void main(String[] args) {
 
+        Scanner leitura = new Scanner(System.in);
 
-        Scanner leitura = new Scanner(System.in).useLocale(Locale.US);
+        System.out.println("Olá, seja bem-vindo(a)!\n");
 
-        System.out.println("Olá, Seja bem vindo!!");
-
-        System.out.println("Funcionário 1 qual é o seu nome? ");
+        // Funcionário 1
+        System.out.println("Funcionário 1, digite seu nome: ");
         String nome1 = leitura.nextLine();
+        System.out.println("Digite seu salário: ");
+        // Remove pontos de milhar (ex: 2.500 -> 2500) e padroniza a vírgula para ponto decimal
+        String salario1 = leitura.nextLine().replace(".", "").replace(",", ".");
 
-        System.out.println("Digite seu salário ");
-        String salario1 = leitura.nextLine().replace(",", ".");
-
-        System.out.println("Funcionário 2 qual é o seu Nome? ");
+        // Funcionário 2
+        System.out.println("\nFuncionário 2, digite seu nome: ");
         String nome2 = leitura.nextLine();
+        System.out.println("Digite seu salário: ");
+        String salario2 = leitura.nextLine().replace(".", "").replace(",", ".");
 
-        System.out.println("Digite seu salário.");
-        String salario2 = leitura.nextLine().replace(",", ".");
-
-        System.out.println("Funcionário 3 qual é o seu Nome? ");
+        // Funcionário 3
+        System.out.println("\nFuncionário 3, digite seu nome: ");
         String nome3 = leitura.nextLine();
+        System.out.println("Digite seu salário: ");
+        String salario3 = leitura.nextLine().replace(".", "").replace(",", ".");
 
-        System.out.println("Digite seu salário.");
-        String salario3 = leitura.nextLine().replace(",", ".");
+        // Realizando o Parsing com segurança após a higienização das Strings
+        double valor1 = Double.parseDouble(salario1);
+        double valor2 = Double.parseDouble(salario2);
+        double valor3 = Double.parseDouble(salario3);
 
-        Double valor = Double.parseDouble(salario1);
-        Double valor1 = Double.parseDouble(salario2);
-        Double valor2 = Double.parseDouble(salario3);
-
-        double soma = valor + valor1+ valor2;
+        // Cálculos matemáticos
+        double soma = valor1 + valor2 + valor3;
         double media = soma / 3;
 
-        System.out.printf("A soma salarial é: %.2f %n", soma);
-        System.out.printf("A média salarial entre %s e %s é %s: %.2f %n", nome1, nome2, nome3, media);
+        // Exibição formatada dos resultados
+        System.out.println("\n--- RESULTADOS ---");
+        System.out.printf("A soma total dos salários é: %.2f%n", soma);
+        System.out.printf("A média salarial entre %s, %s e %s é: %.2f%n", nome1, nome2, nome3, media);
 
         leitura.close();
     }
