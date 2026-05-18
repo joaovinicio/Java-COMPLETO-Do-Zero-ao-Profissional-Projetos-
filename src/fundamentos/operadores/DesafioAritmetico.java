@@ -1,4 +1,4 @@
-package fundamentos;
+package fundamentos.operadores;
 
 /**
  * DESAFIO: Algoritmo de Resolução de Expressão Aritmética Complexa.
