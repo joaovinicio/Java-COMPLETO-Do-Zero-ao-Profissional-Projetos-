@@ -54,6 +54,7 @@ public class DesafioWhile2 {
                 System.out.println("Você foi Reprovado!!");
             }
         }
+        System.out.println("Obrigado por utilizar nosso Programa!!");
         leitor.close();
     }
 
