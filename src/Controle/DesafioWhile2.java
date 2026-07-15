@@ -19,24 +19,22 @@ public class DesafioWhile2 {
         double totalDeNotas = 0;
         int quantidadeDeNotas = 0;
 
-        System.out.println("Olá, Seja bem vindo.");
         System.out.println("Digite seu nome: ");
         String nome = leitor.nextLine();
         System.out.printf("Seja bem vindo Sr@ : %s%n", nome);
 
         while (nota != -1) {
-
             System.out.println("Digite uma nota! ou -1 Para Sair");
-            String entrada = leitor.nextLine();
-            String entradaFormatada = entrada.replace(",", ".");
+            String entrada = leitor.nextLine().replace(",", ".");;
 
-            if (!entradaFormatada.isEmpty()) {
-                nota = Double.parseDouble(entradaFormatada);
+            if (!entrada.isBlank()) {
+                nota = Double.parseDouble(entrada);
 
                 if (nota >= 0 && nota <= 10) {
                     totalDeNotas += nota;
                     quantidadeDeNotas++;
-                } else if (nota != -1) {
+                }
+                else if (nota != -1) {
                     System.out.println("Digite uma nota Válida");
                 }
             }
@@ -55,6 +53,7 @@ public class DesafioWhile2 {
             }
         }
         System.out.println("Obrigado por utilizar nosso Programa!!");
+
         leitor.close();
     }
 
