@@ -30,12 +30,15 @@ public class DesafioWhile2 {
             if (!entrada.isBlank()) {
                 nota = Double.parseDouble(entrada);
 
+                if( nota == -1){
+                    break;
+                }
                 if (nota >= 0 && nota <= 10) {
                     totalDeNotas += nota;
                     quantidadeDeNotas++;
                 }
-                else if (nota != -1) {
-                    System.out.println("Digite uma nota Válida");
+                else  {
+                    System.out.println("Nota inválida! Por favor, digite um valor entre 0 e 10.");
                 }
             }
         }
@@ -53,7 +56,6 @@ public class DesafioWhile2 {
             }
         }
         System.out.println("Obrigado por utilizar nosso Programa!!");
-
         leitor.close();
     }
 
