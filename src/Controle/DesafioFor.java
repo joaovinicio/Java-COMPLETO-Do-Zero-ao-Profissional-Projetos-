@@ -12,12 +12,14 @@ public class DesafioFor {
     public static void main(String[] args) {
 
         String valor = "#";
-        for(int i = 1; i <=5; i++){
+        for (int i = 1; i <= 5; i++) {
             System.out.println(valor);
             valor +="#";
         }
+        System.out.println("Saiu do Loop");
 
-        for(String valor2 = "*"; !valor2.equalsIgnoreCase("******"); valor2 +="*" ){
+        String valor2 = "*";
+        for(valor2 = "*"; !valor2.equalsIgnoreCase("******"); valor2 +="*"){
             System.out.println(valor2);
         }
     }
